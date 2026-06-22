@@ -1,0 +1,26 @@
+
+.ticker
+    width: 100%
+    background: #1a1a1a
+    padding: 20px 0 
+    overflow: hidden
+    border-top: 1px solid #333
+    border-bottom: 1px solid #333
+
+.ticker_wrapper
+    display: flex
+    white-space: nowrap
+    animation: ticker_move 20s linear infinite
+
+    span
+        font-size: 14px
+        text-decoration: uppercase
+        color: #888
+        padding-right: 50px
+
+        @keyframes ticker_move
+
+            0%
+                transform: translateX(0)
+            100%
+                transform: translateX(-50%)

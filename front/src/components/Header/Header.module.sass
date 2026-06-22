@@ -1,0 +1,84 @@
+.header
+   background: rgba(212, 209, 209, 0.647)
+   backdrop-filter: blur(15px)
+   
+.header_wrap
+   max-width: 1440px
+   margin: 0 auto
+   display: flex
+   justify-content: space-between
+   align-items: center
+   gap: 30px
+   padding: 20px 20px
+      
+   h2
+      text-transform: uppercase
+      .title
+         font-size: 26px
+         font-weight: 700
+         color: #000000
+         letter-spacing: 2px
+         cursor: pointer
+         transition: 0.3s
+
+         &:hover
+            color: #f5c518
+
+.navbar
+   display: flex
+   color: #000000
+   font-size: 20px
+   text-shadow: 0 0 8px rgb(193, 192, 191)
+            
+   .link
+            display: flex
+            align-items: center
+            gap: 8px
+            color: #949a9a
+            text-decoration: none
+            font-size: 16px
+            transition: 0.3s
+            padding: 0 10px
+
+            svg
+               font-size: 20px
+
+
+            &:hover
+               color: #ffffff
+
+               &::after
+                  content: ""
+                  position: absolute
+                  left: 0
+                  bottom: -5px
+                  width: 0%
+                  height: 2px
+                  background: #f5c518
+                  transition: 0.3s
+
+.ticker
+    width: 100%
+    background: #1a1a1a
+    padding: 20px 0 
+    overflow: hidden
+    border-top: 1px solid #333
+    border-bottom: 1px solid #333
+
+.ticker_wrapper
+    display: flex
+    white-space: nowrap
+    animation: ticker_move 20s linear infinite
+
+    span
+        font-size: 14px
+        text-decoration: uppercase
+        color: #888
+        padding-right: 50px
+
+        @keyframes ticker_move
+
+            0%
+                transform: translateX(0)
+            100%
+                transform: translateX(-50%)

@@ -1,0 +1,103 @@
+.main
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 60px 20px
+  background-color: #232323 
+  min-height: 100vh
+
+.pageTitle
+  color: #ffffff
+  text-align: center
+  font-size: 2.5rem
+  margin-bottom: 40px
+  font-family: "Montserrat"
+  letter-spacing: 2px
+  text-transform: uppercase
+
+.cardContainer
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  gap: 40px
+  width: 100%
+
+.card
+  border-radius: 12px
+  background-color: #1e1e1e 
+  overflow: hidden
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5)
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+
+  &:hover
+    transform: translateY(-8px)
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7)
+
+.card_img
+  width: 100%
+  height: 300px 
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #2a2a2a
+  position: relative 
+  overflow: hidden
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover 
+    transition: transform 0.5s ease
+
+  &:hover img
+    transform: scale(1.05)
+
+.heartBtn
+  position: absolute
+  top: 15px
+  right: 15px
+  background: rgba(0, 0, 0, 0.4) 
+  backdrop-filter: blur(5px)
+  border: none
+  cursor: pointer
+  border-radius: 50%
+  width: 40px
+  height: 40px
+  display: flex
+  justify-content: center
+  align-items: center
+  color: #ffffff 
+  font-size: 1.4rem 
+  transition: all 0.3s ease
+
+  &:hover
+    background: rgba(0, 0, 0, 0.6)
+    transform: scale(1.1) 
+
+  &.active
+    color: #ff334b
+
+.filledHeart
+  animation: popIn 0.3s ease 
+
+.img_title
+  padding: 20px
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+.title
+  font-size: 1.2rem
+  font-weight: 600
+  color: #ffffff
+
+.categoryTag
+  font-size: 0.85rem
+  color: #f5c518
+  text-transform: uppercase
+  letter-spacing: 1px
+
+@keyframes popIn
+  0%
+    transform: scale(0.6)
+  100%
+    transform: scale(1)
