@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginSuccess } from '../../app/authSlice';
 import Input from '../../components/Input/Input';
 import s from "./Login.module.sass";
@@ -11,6 +11,7 @@ const Login = () => {
   const [error, setError] = useState('');
   
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,8 +30,7 @@ const Login = () => {
 
       if (response.ok) {
         dispatch(loginSuccess({ token: data.token, user: data.user }));
-        localStorage.setItem('token', data.token);
-        alert("Login successful!");
+        navigate('/');
       } else {
         setError(data.message || 'Invalid email or password');
       }

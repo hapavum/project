@@ -30,7 +30,6 @@ const Registr = () => {
       if (response.ok) {
         if (data.token) {
           dispatch(loginSuccess({ token: data.token, user: data.user }));
-          localStorage.setItem('token', data.token);
         }
         alert("Registration successful!");
       } else {

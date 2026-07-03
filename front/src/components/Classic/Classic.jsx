@@ -46,6 +46,7 @@ const Classic = () => {
                   </div>
                   <div className={s.img_title}>
                     <div className={s.title}>{product.title}</div>
+                    <div className={s.price}>${Number(product.price).toLocaleString()}</div>
                   </div>
                 </div>
               );

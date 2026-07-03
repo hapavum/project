@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleFavorite } from '../../app/favoritesSlice'; // Ճշտիր քո slice-ի ճանապարհը
+import { toggleFavorite } from '../../app/favoritesSlice';
 import s from './Favorites.module.sass';
 import Container from '../Container/Container';
 import Header from '../Header/Header';
@@ -8,7 +8,6 @@ import Footer from '../Footer/Footer';
 
 const Favorites = () => {
   const dispatch = useDispatch();
-  // Redux-ից վերցնում ենք հավանած ապրանքների items մասիվը
   const favoriteItems = useSelector((state) => state.favorites.items);
 
   return (
@@ -38,6 +37,7 @@ const Favorites = () => {
                   </div>
                   <div className={s.img_title}>
                     <div className={s.title}>{product.title}</div>
+                    <div className={s.price}>${Number(product.price).toLocaleString()}</div>
                   </div>
                 </div>
               ))}
