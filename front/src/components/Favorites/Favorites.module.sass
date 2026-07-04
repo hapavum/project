@@ -2,82 +2,162 @@
   display: flex
   flex-direction: column
   align-items: center
-  padding: 40px 40px
-  background-color: #3a3a3a 
+  padding: 60px 40px
+  background: radial-gradient(circle at top, #1f1f1f 0%, #0d0d0d 70%)
   min-height: 100vh
 
 .pageTitle
-  color: #ffffff
+  color: #f5f5f5
   text-align: center
-  font-size: 2rem
-  margin-bottom: 30px
+  font-size: 2.4rem
+  font-weight: 700
+  letter-spacing: 2px
+  margin-bottom: 12px
+  text-transform: uppercase
+
+.pageSubtitle
+  text-align: center
+  color: #8a8a8a
+  font-size: 0.95rem
   letter-spacing: 1px
+  margin-bottom: 50px
+
+  &::after
+    content: ""
+    display: block
+    width: 70px
+    height: 2px
+    background: linear-gradient(90deg, transparent, #e8c76f, transparent)
+    margin: 18px auto 0
 
 .emptyMessage
   text-align: center
-  color: #cccccc
+  color: #777777
   font-size: 1.3rem
-  padding: 50px 0
+  padding: 100px 0
+  letter-spacing: 0.5px
 
 .cardContainer
   display: grid
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
-  gap: 40px
+  gap: 36px
   width: 100%
-   
+  max-width: 1400px
+
 .card
-  border-radius: 10px
-  background-color: #1e1e1e 
+  position: relative
+  border-radius: 16px
+  background: linear-gradient(160deg, #202020 0%, #161616 100%)
   overflow: hidden
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4)
-  transition: transform 0.3s ease, box-shadow 0.3s ease
+  border: 1px solid rgba(232, 199, 111, 0.12)
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45)
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease
 
   &:hover
-    transform: translateY(-6px)
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6)
+    transform: translateY(-8px)
+    border-color: rgba(232, 199, 111, 0.55)
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(232, 199, 111, 0.08)
+
+    .card_img img
+      transform: scale(1.08)
+
+    .heartBtn
+      opacity: 1
+      transform: translateY(0)
 
   .card_img
     width: 100%
-    height: 300px 
-    display: flex
-    justify-content: center
-    align-items: center
-    background-color: #2a2a2a
-    overflow: hidden
+    height: 300px
     position: relative
+    overflow: hidden
+    background: #262626
+
+    &::after
+      content: ""
+      position: absolute
+      inset: 0
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(10, 10, 10, 0.85) 100%)
+      pointer-events: none
 
     img
       width: 100%
       height: 100%
-      object-fit: cover 
+      object-fit: cover
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)
+
+    .categoryTag
+      position: absolute
+      top: 16px
+      left: 16px
+      padding: 5px 14px
+      font-size: 0.7rem
+      font-weight: 600
+      letter-spacing: 1px
+      text-transform: uppercase
+      color: #0d0d0d
+      background: linear-gradient(120deg, #f3d98a, #d4a94e)
+      border-radius: 999px
+      z-index: 1
 
     .heartBtn
       position: absolute
-      top: 15px
-      right: 15px
-      background: #ffffff
-      border: none
-      font-size: 1.4rem
-      cursor: pointer
-      border-radius: 50%
-      width: 38px
-      height: 38px
+      top: 14px
+      right: 14px
+      width: 40px
+      height: 40px
       display: flex
       align-items: center
       justify-content: center
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.2)
+      background: rgba(13, 13, 13, 0.55)
+      backdrop-filter: blur(6px)
+      border: 1px solid rgba(255, 255, 255, 0.15)
+      border-radius: 50%
+      font-size: 1.15rem
+      cursor: pointer
+      opacity: 0.85
+      transform: translateY(-2px)
+      transition: all 0.3s ease
+      z-index: 1
+
+      &:hover
+        background: rgba(220, 50, 50, 0.85)
+        border-color: rgba(255, 255, 255, 0.4)
+        transform: scale(1.14)
 
   .img_title
-    padding: 20px
-    text-align: center
-    background-color: #bb9c9c
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    gap: 12px
+    padding: 20px 22px
+
+    .titleBlock
+      display: flex
+      flex-direction: column
+      gap: 6px
+      min-width: 0
 
     .title
-      font-size: 1.2rem
+      font-size: 1.15rem
       font-weight: 600
-      color: #ffffff
+      color: #f2f2f2
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      letter-spacing: 0.3px
+
+    .subLabel
+      font-size: 0.75rem
+      color: #7d7d7d
+      letter-spacing: 0.5px
+      text-transform: uppercase
 
     .price
-      font-size: 1rem
-      font-weight: 500
-      color: #f0f0f0
+      flex-shrink: 0
+      font-size: 1.15rem
+      font-weight: 700
+      letter-spacing: 0.3px
+      background: linear-gradient(120deg, #f3d98a, #c99c3f)
+      -webkit-background-clip: text
+      background-clip: text
+      color: transparent

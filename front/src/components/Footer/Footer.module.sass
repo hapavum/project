@@ -1,41 +1,76 @@
 .rolex_footer
-    background: #000000
-    width: 100%
-    height: 20vh
-    font-family: sans-serif
+  background: #000000
+  width: 100%
+  border-top: 1px solid rgba(232, 199, 111, 0.15)
+  font-family: sans-serif
+  padding: 36px 0
 
-    .footer_col
-        position: relative
-        top: 50%
-        left: 50%
-        transform: translate(-50%, 0%)
-        color: #ffffff
-        font-size: 20px
-        display: flex
-        flex-direction: row
-        justify-content: start
-        align-items: center
-        gap: 30px
-        padding: 20px
+  .footer_col
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    gap: 24px
 
-        .footer_nav
-             color: #211
-             font-size: 30px
-             font-weight: 500
-             display: flex
-             justify-content: centeraic
-             gap: 20px
+  .brand
+    display: flex
+    flex-direction: column
+    gap: 6px
 
-        .link
-                    color: #ffffff
-                    text-decoration: none
-                    font-size: 20px
-                    font-weight: 500
-                    transition: 0.3s
-                    padding: 0 10px
+    .logo
+      margin: 0
+      color: #f5f5f5
+      font-size: 1.3rem
+      font-weight: 700
+      letter-spacing: 3px
 
-                    &:hover
-                       color: #fff
+    .copyright
+      margin: 0
+      color: #7d7d7d
+      font-size: 0.8rem
+      letter-spacing: 0.3px
 
-        
-    
+  .footer_nav
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    gap: 8px
+
+    .link
+      color: #cfcfcf
+      text-decoration: none
+      font-size: 1.3rem
+      font-weight: 500
+      letter-spacing: 0.3px
+      padding: 8px 14px
+      border-radius: 999px
+      transition: color 0.3s ease, background 0.3s ease
+
+      &:hover
+        color: #0d0d0d
+        background: linear-gradient(120deg, #f3d98a, #d4a94e)
+
+  .socials
+    display: flex
+    align-items: center
+    gap: 14px
+
+    .iconLink
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 38px
+      height: 38px
+      border-radius: 50%
+      border: 1px solid rgba(255, 255, 255, 0.15)
+      color: #cfcfcf
+      font-size: 1.1rem
+      transition: all 0.3s ease
+
+      &:hover
+        color: #0d0d0d
+        background: linear-gradient(120deg, #f3d98a, #d4a94e)
+        border-color: transparent
+        transform: translateY(-3px)
